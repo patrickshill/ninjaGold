@@ -8,6 +8,7 @@ if(state_onEnter(playerState)) {
 	//VFX
 	xscale = 1.5;
 	yscale = 0.5;
+	Shake(1,6);
 	
 	//Attack
 	dashxstart = x-(8*facing);
@@ -40,4 +41,8 @@ if(state_onExit(playerState)) {
 	hitbox.xhit = 0;
 	hitbox.yhit = -2;
 	hitbox.dmg = 2;
+	
+	var slashAnim = instance_create_depth(dashxstart,dashy-18,depth-10,obj_dashSlashAnimation);
+	slashAnim.image_xscale = facing;
+	
 }

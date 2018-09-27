@@ -1,0 +1,2 @@
+/// @description 
+owner = -1;

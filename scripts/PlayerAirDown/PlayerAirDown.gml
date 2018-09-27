@@ -5,6 +5,11 @@ if(state_onEnter(playerState)) {
 	if(!Control.kLeft && !Control.kRight) {
 		vx = 0;
 	}
+	
+	//VFX
+	xscale = 0.8;
+	yscale = 1.2;
+	Shake(1,4);
 }
 
 //Apply friction
@@ -17,6 +22,8 @@ if(attackTimer == airAttack[1, att.windup]) {
 	
 	//Create Attack
 	hitbox = HitboxCreate(-12,-8,24,32,airAttack[0,att.duration],0,-3,1);
+	
+	AttackAnimCreate(spr_airAttackDown,-12*facing,-22);
 	
 }
 

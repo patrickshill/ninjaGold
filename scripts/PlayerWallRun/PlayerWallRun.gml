@@ -36,3 +36,11 @@ if(Control.kJump) {
 		jNum++;
 	}
 }
+if(state_onExit(playerState)) {
+	if(cLeft && Control.kLeft && !onGround) {
+		state_change(playerState,PlayerWallSlide);
+	}
+	if(cRight && Control.kRight && !onGround) {
+		state_change(playerState,PlayerWallSlide);
+	}
+}

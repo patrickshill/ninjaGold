@@ -3,8 +3,8 @@ if(state_onEnter(playerState)) {
 	sprite_index = spr_playerJump;
 	image_index = 0;
 	
-	vx = vxMax*1.2*facing;
-	vy = jSpd*1;
+	vx = vxMax*1.5*facing;
+	vy = jSpd*0.9;
 		
 	//Cancel dashT
 	dashT = -1;
@@ -13,6 +13,10 @@ if(state_onEnter(playerState)) {
 
 if(cLeft || cRight) {
 	state_change(playerState,(onGround)? PlayerRun : PlayerJump);
+}
+
+if(Control.kAttack) {
+	state_change(playerState,PlayerDashJumpAttack);
 }
 
 if(!state_onEnter(playerState) && onGround) {

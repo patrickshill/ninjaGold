@@ -80,7 +80,7 @@
             "mvc": "1.0",
             "SpriteId": "8635d857-cb8b-4a70-98d4-45df851009f1",
             "blendMode": 0,
-            "isLocked": false,
+            "isLocked": true,
             "name": "Layer 2",
             "opacity": 100,
             "visible": false

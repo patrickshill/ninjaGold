@@ -11,7 +11,15 @@ if(state_onEnter(playerState)) {
 	//Attack buffer
 	attackBuffered = false;
 	
+	//ChargeAttack
+	hasReleasedAttack = false;
+	
 	AttackAnimCreate(spr_meleeCombo1,-12*facing,-20);
+	
+	//VFX
+	xscale = 1.2;
+	yscale = 0.8;
+	Shake(1,4);
 }
 
 //Apply friction
@@ -21,13 +29,18 @@ attackTimer += 1;
 if(attackTimer == meleeCombo[meleeComboNum, att.windup]) {
 	
 	//Create Attack
-	hitbox = HitboxCreate(0,-20,32*facing,24,meleeCombo[meleeComboNum,att.duration],2*facing,-1,meleeCombo[meleeComboNum,att.dmg]);
+	hitbox = HitboxCreate(0,-20,32*facing,24,meleeCombo[meleeComboNum,att.duration],1*facing,-1,meleeCombo[meleeComboNum,att.dmg]);
 	
 }
 
 if(Control.kAttack && attackTimer > attackDur-meleeCombo[meleeComboNum,att.recovery]-5 && !Control.kUp) {
 	attackBuffered = true;
 }
+
+if(Control.kAttackR) {
+	hasReleasedAttack = true;
+}
+
 
 //Dash Slash
 if(Control.kDash && attackTimer > attackDur-meleeCombo[meleeComboNum,att.recovery]-10) {
@@ -45,4 +58,8 @@ if(attackTimer == attackDur) {
 if(state_onExit(playerState)) {
 	meleeComboNum++;
 	comboWindow = meleeCombo[meleeComboNum, att.comboReset];
+	
+	if(!hasReleasedAttack && !dashSlash) {
+		state_change(playerState,PlayerChargeUp);
+	}
 }

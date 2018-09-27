@@ -13,7 +13,12 @@ if(state_onEnter(playerState)) {
 	//Create Attack
 	hitbox = HitboxCreate(0,-20,32*facing,24,10,6*facing,-2,2);
 	
+	AttackAnimCreate(spr_dashStab,-8*facing,-20);
+	
 	attackDur = 25;
+	
+	//VFX
+	Shake(2,6);
 }
 
 //Apply friction

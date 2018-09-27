@@ -1,3 +1,7 @@
 /// @description 
-event_inherited();
+if(hitStun) {
+	hitStun--;
+} else {
+	event_inherited();
+}
 

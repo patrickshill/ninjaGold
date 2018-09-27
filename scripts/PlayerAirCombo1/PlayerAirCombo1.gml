@@ -9,6 +9,11 @@ if(state_onEnter(playerState)) {
 	
 	//Attack buffer
 	attackBuffered = false;
+	
+	//VFX
+	xscale = 1.2;
+	yscale = 0.8;
+	Shake(1,4);
 }
 
 //Apply friction
@@ -20,7 +25,10 @@ attackTimer += 1;
 if(attackTimer == airCombo[airComboNum, att.windup]) {
 	
 	//Create Attack
-	hitbox = HitboxCreate(0,-20,32*facing,24,airCombo[airComboNum,att.duration],2*facing,-1,airCombo[airComboNum,att.dmg]);
+	var xhit = (sign(vx) != 0)? vx : 0;
+	hitbox = HitboxCreate(0,-20,32*facing,24,airCombo[airComboNum,att.duration],xhit,-2,airCombo[airComboNum,att.dmg]);
+	
+	AttackAnimCreate(spr_airCombo1,-12*facing,-20);
 	
 }
 

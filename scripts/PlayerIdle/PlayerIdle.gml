@@ -1,6 +1,18 @@
 if(state_onEnter(playerState)) {
 	sprite_index = spr_playerIdle;
+	idleT = irandom_range(0,30);
 }
+
+//Animation variation
+if(sprite_index == spr_playerIdle) {
+	idleT++;
+}
+if(idleT == 240) {
+	idleT = -1;
+	sprite_index = choose(spr_playerIdle2,spr_playerIdle3);
+	iamge_index = 0;
+}
+
 
 var tempGrav,tempGravMax,tempFric,tempAcc;
 tempGrav	= grav;
@@ -44,7 +56,7 @@ if(Control.kAttack) {
 		state_change(playerState, meleeCombo[meleeComboNum, att.state]);
 	}
 	//UpAttack
-	if(Control.kUp) {
+	if(Control.kUp && canAttackUp) {
 		state_change(playerState,PlayerAttackUp);
 	}
 }

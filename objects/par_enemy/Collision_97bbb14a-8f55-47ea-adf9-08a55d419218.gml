@@ -11,6 +11,10 @@ with(other) {
 if(!hit) {
 	hp -= other.dmg;
 	ds_list_add(other.hitList,id);
-	vx += other.xhit;
-	vy += other.yhit;
+	vx = other.xhit;
+	vy = other.yhit;
+	if(canStun) {
+		hitStun = other.stun;
+	}
+	Shake(other.shakeAmt,other.shakeDur);
 }

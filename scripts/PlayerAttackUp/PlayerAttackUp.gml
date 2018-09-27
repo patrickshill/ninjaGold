@@ -2,6 +2,12 @@ if(state_onEnter(playerState)) {
 	sprite_index = airAttack[0,att.animation];
 	attackTimer = 0;
 	attackDur = 15
+	canAttackUp = false;
+	attackUpCD = 30;
+	
+	//VFX
+	xscale = 0.8;
+	yscale = 1.2;
 }
 
 //Apply friction
@@ -16,6 +22,9 @@ if(attackTimer == 5) {
 	hitbox = HitboxCreate(-16,-32,32,32,5,vx,-5,1);
 	
 	AttackAnimCreate(spr_attackUp,-18*facing,-32);
+	
+	//VFX
+	Shake(1,4);
 	
 }
 

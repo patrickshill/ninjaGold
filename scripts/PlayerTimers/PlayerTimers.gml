@@ -29,6 +29,13 @@ if(comboWindow == 0) {
 	meleeComboNum = 0;
 }
 
+//Attack up
+if(attackUpCD > 0) { attackUpCD--; }
+if(attackUpCD == 0) {
+	attackUpCD = -1;
+	canAttackUp = true;
+}
+
 //Air combo
 if(airComboWindow > 0) { airComboWindow--; }
 if(airComboWindow == 0) {

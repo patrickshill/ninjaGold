@@ -102,6 +102,49 @@
             ]
         },
         {
+            "id": "ec1fefdd-467f-49a2-b8e4-5df7724396ff",
+            "modelName": "GMSpriteFrame",
+            "mvc": "1.0",
+            "SpriteId": "58b81799-db85-436a-b3c0-341a00964f37",
+            "compositeImage": {
+                "id": "d24bc966-b881-42b0-afc9-b8232b945713",
+                "modelName": "GMSpriteImage",
+                "mvc": "1.0",
+                "FrameId": "ec1fefdd-467f-49a2-b8e4-5df7724396ff",
+                "LayerId": "00000000-0000-0000-0000-000000000000"
+            },
+            "images": [
+                {
+                    "id": "549f802e-348a-474d-a90f-3fc986f1d42d",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "ec1fefdd-467f-49a2-b8e4-5df7724396ff",
+                    "LayerId": "623609e9-906f-408e-9527-7d839c0594dc"
+                },
+                {
+                    "id": "d28db01b-c7a8-4b6a-87b6-e792739479c7",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "ec1fefdd-467f-49a2-b8e4-5df7724396ff",
+                    "LayerId": "d76e783c-4931-4dfe-9fec-2ac94c1402b1"
+                },
+                {
+                    "id": "e060727e-1205-4e27-87a6-13f0058bebfa",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "ec1fefdd-467f-49a2-b8e4-5df7724396ff",
+                    "LayerId": "c0df7d51-8da5-47fc-b22a-a6874d02db60"
+                },
+                {
+                    "id": "0702d8b6-55f6-4cb8-a642-4a0e4cbbcd13",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "ec1fefdd-467f-49a2-b8e4-5df7724396ff",
+                    "LayerId": "a1cb5c3b-6634-4be0-bb5d-6e094ffd11ea"
+                }
+            ]
+        },
+        {
             "id": "fca26010-309b-4099-a425-0c6c8b8451cb",
             "modelName": "GMSpriteFrame",
             "mvc": "1.0",
@@ -239,7 +282,7 @@
     ],
     "origin": 9,
     "originLocked": false,
-    "playbackSpeed": 4,
+    "playbackSpeed": 3,
     "playbackSpeedType": 0,
     "premultiplyAlpha": false,
     "sepmasks": false,

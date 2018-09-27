@@ -6,6 +6,7 @@ if(vy > 0) {
 	sprite_index = spr_playerFall;
 }
 
+
 var tempGrav,tempGravMax,tempFric,tempAcc;
 tempGrav	= grav;
 tempGravMax	= gravMax;

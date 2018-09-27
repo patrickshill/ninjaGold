@@ -1,7 +1,29 @@
 if(state_onEnter(playerState)) {
 	sprite_index = spr_playerRun;
 	image_index = 0;
+	
+	if(Control.kLeft)	{ facing = -1; }
+	if(Control.kRight)	{ facing = 1; }
+	
+	//Dust
+	CreateDust(spr_dustRun,x,y,1.25,0.75);
 }
+
+//Sheath animation
+var frame = floor(image_index);
+if(frame == 2 || frame == 5) {
+	if(!sheathRunAnimation) {
+		sheathRunAnimation = true;
+		sheath_yoff = 1.5;
+		
+		//Dust
+		CreateDust(spr_dustRun,x,y,1.25,0.75);
+	}
+} else {
+	sheathRunAnimation = false;
+}
+
+
 
 var tempGrav,tempGravMax,tempFric,tempAcc;
 tempGrav	= grav;
@@ -67,7 +89,7 @@ if(Control.kAttack) {
 		state_change(playerState, meleeCombo[meleeComboNum, att.state]);
 	}
 	//UpAttack
-	if(Control.kUp) {
+	if(Control.kUp && canAttackUp) {
 		state_change(playerState,PlayerAttackUp);
 	}
 }

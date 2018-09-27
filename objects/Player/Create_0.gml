@@ -66,6 +66,14 @@ canMeleeCombo = true;
 meleeComboNum = 0;
 comboWindow = 0;
 
+//Charge Attack
+hasReleasedAttack = false;
+chargeAttackT = 0;
+
+//attack up
+canAttackUp = true;
+attackUpCD = -1;
+
 //Air combo
 canAirAttack = true;
 airComboNum = 0;
@@ -80,7 +88,8 @@ dashy = 0;
 //Dash stab
 dashStab = false;
 
-
+//Dash Jump attack
+dashJumpAttack = -1;
 
 hitbox = -1;
 canAttack = true;
@@ -108,3 +117,23 @@ facing = 1;
 xscale = 1;
 yscale = 1;
 landed = false;
+
+//Idle animation
+idleT = 0;
+
+//Sheath
+sheathRunAnimation = false;
+sheath_yoff = 0;
+
+//Scarf
+scarfSurf = surface_create(32,32);
+surface_set_target(scarfSurf);
+draw_sprite(spr_scarf,0,12,12);
+surface_reset_target();
+scarfT = 0;
+scarfInc = 3;
+scarfAmp = 15;
+scarfAngle = 0;
+scarfAngleOffset = 0;
+xprev = x;
+yprev = y;

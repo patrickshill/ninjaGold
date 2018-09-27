@@ -7,5 +7,6 @@ kDown	= 0;
 kJump	= 0;
 kJumpR	= 0;
 kDash	= 0;
-kAttack = 0;
+kAttack = 0; 
+kAttackR = 0;
 kThrow	= 0;

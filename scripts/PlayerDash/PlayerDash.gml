@@ -16,6 +16,7 @@ if(state_onEnter(playerState)) {
 	//VFX
 	xscale = 1.5;
 	yscale = 0.5;
+	Shake(1,6);
 	
 	//SFX
 }
@@ -23,6 +24,8 @@ if(state_onEnter(playerState)) {
 if(cLeft || cRight) {
 	state_change(playerState,(onGround)? PlayerRun : PlayerJump);
 }
+
+scarfAngleOffset = 0;
 
 //Dash time
 if(dashT > 0) { dashT--; }
@@ -56,6 +59,9 @@ if(state_onExit(playerState)) {
 		hitbox.life = 5;
 		hitbox.xhit = 0;
 		hitbox.yhit = -2;
+	
+		var slashAnim = instance_create_depth(dashxstart,dashy-18,depth-10,obj_dashSlashAnimation);
+		slashAnim.image_xscale = facing;
 	}
 	if(dashStab) {
 		state_change(playerState, PlayerDashStab);
